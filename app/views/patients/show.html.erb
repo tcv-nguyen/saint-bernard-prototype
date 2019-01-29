@@ -1,0 +1,50 @@
+<div><%= link_to 'Back', patients_path, class: 'btn btn-primary' %></div>
+<div class="show-patient">
+  <div class="col-md-12 well title">
+    Emergency Transfer Summary (Form 34L-D)
+  </div>
+  <div class="col-md-12 panel panel-default title">
+    Transferring Facility
+  </div>
+  <div class="col-md-12 panel panel-default">
+    <div class="title">Name</div>
+    <%= @patient.facility_name %>
+  </div>
+  <div class="col-md-12 panel panel-default title">
+    Patient Information
+  </div>
+  <div class="col-md-12 patient-information panel panel-default">
+    <table class="table table-bordered">
+      <tr>
+        <colgroup width="15%"></colgroup>
+        <colgroup width="15%"></colgroup>
+        <colgroup width="15%"></colgroup>
+        <colgroup width="15%"></colgroup>
+        <colgroup width="39%"></colgroup>
+      </tr>
+      <tr>
+        <td>
+          <div>First Name</div>
+          <%= @patient.first_name %>
+        </td>
+        <td>
+          <div>Middle Name</div>
+          <%= @patient.middle_name %>
+        </td>
+        <td>
+          <div>Last Name</div>
+          <%= @patient.last_name %>
+        </td>
+        <td>
+          <div>Medical Record (MR)</div>
+          <%= @patient.mr %>
+        </td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-md-12 panel panel-default">
+    <div class="title">Summary</div>
+    <%= raw @patient.summary %>
+  </div>
+</div>

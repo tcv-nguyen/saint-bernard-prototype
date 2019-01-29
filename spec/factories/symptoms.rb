@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :symptom do
     association :admission
-    description { Faker::Lorem.paragraph(3) }
+    description { Faker::Lorem.words(3).join(' ') }
   end
 end

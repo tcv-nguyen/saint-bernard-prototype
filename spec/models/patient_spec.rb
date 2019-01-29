@@ -13,4 +13,16 @@ RSpec.describe Patient, type: :model do
   it { should have_many(:treatments).dependent(:destroy) }
 
   it { should validate_inclusion_of(:gender).in_array(TermDefinitions::GENDERS) }
+
+  describe "patient with_full_info" do
+    let(:patient_with_full_info) { create(:patient, :with_full_info) }
+
+    it { expect(patient_with_full_info.admission.persisted?).to be_truthy }
+    it { expect(patient_with_full_info.allergies.count).to eq(1) }
+    it { expect(patient_with_full_info.chronic_conditions.count).to eq(1) }
+    it { expect(patient_with_full_info.medications.count).to eq(1) }
+    it { expect(patient_with_full_info.diagnostic_procedures.count).to eq(1) }
+    it { expect(patient_with_full_info.diagnoses.count).to eq(1) }
+    it { expect(patient_with_full_info.treatments.count).to eq(1) }
+  end
 end

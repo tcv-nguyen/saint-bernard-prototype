@@ -1,0 +1,17 @@
+<table class="table table-bordered table-hover table-striped">
+  <% if @patients.present? %>
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Medical Record</th>
+        <th>Gender</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @patients %>
+    </tbody>
+  <% else %>
+    <tr>There is no patient.</tr>
+  <% end %>
+</table>

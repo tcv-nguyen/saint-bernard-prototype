@@ -5,4 +5,8 @@ RSpec.describe Diagnosis, type: :model do
 
   it { should belong_to :patient }
   it { should belong_to :diagnosable }
+
+  it { should validate_presence_of :coding_system }
+  it { should validate_presence_of :description }
 end
+
