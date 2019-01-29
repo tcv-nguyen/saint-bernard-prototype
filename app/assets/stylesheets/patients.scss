@@ -32,3 +32,9 @@
     font-weight: 600;
   }
 }
+
+@media print {
+  .hide-on-print {
+    display: none;
+  }
+}

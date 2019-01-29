@@ -1,4 +1,7 @@
-<div><%= link_to 'Back', patients_path, class: 'btn btn-primary' %></div>
+<div>
+  <%= link_to 'Back', patients_path, class: 'btn btn-primary hide-on-print' %>
+  <%= link_to 'Print', '', class: 'btn btn-info hide-on-print', onclick: 'window.print(); return false;' %>  
+</div>
 <div class="show-patient">
   <div class="col-md-12 well title">
     Emergency Transfer Summary (Form 34L-D)
